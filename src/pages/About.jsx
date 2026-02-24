@@ -87,13 +87,15 @@ const About = () => {
                   ))}
                 </div>
                 
-                <motion.button
-                  className="px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300 font-medium"
+                <motion.a
+                  href="/Resume.pdf"
+                  download="Samad_Khan_Resume.pdf"
+                  className="px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300 font-medium inline-block"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Download Resume
-                </motion.button>
+                </motion.a>
               </motion.div>
             </div>
             
