@@ -6,6 +6,7 @@ import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import { skills } from '../data/homeData';
 import { getFeaturedProjects } from '../services/api';
+import profileImage from '../images/me.png';
 
 const Home = () => {
   const [featuredProjects, setFeaturedProjects] = useState([]);
@@ -53,7 +54,7 @@ const Home = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                 >
-                  Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Alex Johnson</span>
+                  Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Samad Khan</span>
                 </motion.h1>
                 
                 <motion.h2 
@@ -111,8 +112,12 @@ const Home = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
-                <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-56 h-56 md:w-72 md:h-72 rounded-full" />
+                <div className="w-100 h-100 md:w-80 md:h-80 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl p-4">
+                  <img 
+                    src={profileImage} 
+                    alt="Samad Khan" 
+                    className="w-full h-full object-cover rounded-full border-4 border-white/20"
+                  />
                 </div>
                 
                 {/* Floating elements */}
