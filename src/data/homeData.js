@@ -6,17 +6,19 @@ import {
   CloudArrowUpIcon,
   ArrowPathIcon
 } from '@heroicons/react/24/outline';
+import { FaReact, FaNodeJs, FaPython, FaJava, FaFigma, FaAws } from 'react-icons/fa';
+import { SiJavascript, SiMongodb, SiFirebase, SiTailwindcss, SiVuedotjs } from 'react-icons/si';
 
 // Skills data for the Home page
 export const skills = [
-  { name: 'React', level: 'Expert', icon: CodeBracketIcon },
-  { name: 'JavaScript', level: 'Expert', icon: CodeBracketIcon },
-  { name: 'Node.js', level: 'Advanced', icon: ServerStackIcon },
-  { name: 'UI/UX Design', level: 'Advanced', icon: PaintBrushIcon },
-  { name: 'Mobile Development', level: 'Intermediate', icon: DevicePhoneMobileIcon },
-  { name: 'Cloud Services', level: 'Intermediate', icon: CloudArrowUpIcon },
-  { name: 'DevOps', level: 'Intermediate', icon: ArrowPathIcon },
-  { name: 'Python', level: 'Advanced', icon: CodeBracketIcon },
+  { name: 'React', level: 'Expert', icon: FaReact, color: 'text-cyan-500' },
+  { name: 'JavaScript', level: 'Expert', icon: SiJavascript, color: 'text-yellow-500' },
+  { name: 'Node.js', level: 'Advanced', icon: FaNodeJs, color: 'text-green-600' },
+  { name: 'UI/UX Design', level: 'Advanced', icon: FaFigma, color: 'text-purple-500' },
+  { name: 'Mobile Development', level: 'Intermediate', icon: DevicePhoneMobileIcon, color: 'text-indigo-500' },
+  { name: 'Cloud Services', level: 'Intermediate', icon: FaAws, color: 'text-orange-500' },
+  { name: 'DevOps', level: 'Intermediate', icon: ArrowPathIcon, color: 'text-blue-500' },
+  { name: 'Python', level: 'Advanced', icon: FaPython, color: 'text-blue-400' },
 ];
 
 // Featured projects for the Home page

@@ -9,34 +9,36 @@ import {
   AcademicCapIcon,
   UserGroupIcon
 } from '@heroicons/react/24/outline';
+import { FaReact, FaNodeJs, FaPython, FaJava, FaFigma, FaAws, FaGithub, FaGraduationCap, FaLaptopCode, FaCode, FaNode } from 'react-icons/fa';
+import { SiJavascript, SiMongodb, SiFirebase, SiTailwindcss, SiVuedotjs, SiNextdotjs, SiGithub, SiReact  } from 'react-icons/si';
 
 const About = () => {
   const aboutStats = [
-    { value: '5+', label: 'Years Experience' },
-    { value: '50+', label: 'Projects Completed' },
-    { value: '25+', label: 'Happy Clients' },
+    { value: '1+', label: 'Years Experience' },
+    { value: '10+', label: 'Projects Completed' },
+    { value: '5+', label: 'Happy Clients' },
     { value: '15+', label: 'Technologies Mastered' },
   ];
 
   const skills = [
-    { name: 'JavaScript', level: 95, color: 'bg-yellow-500' },
-    { name: 'React', level: 90, color: 'bg-blue-500' },
-    { name: 'Node.js', level: 85, color: 'bg-green-500' },
-    { name: 'Python', level: 80, color: 'bg-blue-600' },
-    { name: 'TypeScript', level: 85, color: 'bg-blue-700' },
-    { name: 'UI/UX Design', level: 75, color: 'bg-purple-500' },
+    { name: 'JavaScript', level: 90, color: 'bg-yellow-500', icon: SiJavascript },
+    { name: 'React', level: 85, color: 'bg-blue-500', icon: FaReact },
+    { name: 'Node.js', level: 80, color: 'bg-green-500', icon: FaNodeJs },
+    { name: 'Python', level: 75, color: 'bg-blue-600', icon: FaPython },
+    { name: 'TypeScript', level: 80, color: 'bg-blue-700', icon: SiJavascript },
+    { name: 'UI/UX Design', level: 70, color: 'bg-purple-500', icon: FaFigma },
   ];
 
   const achievements = [
-    { icon: AcademicCapIcon, title: 'Education', description: 'B.S. Computer Science from Stanford University' },
-    { icon: UserGroupIcon, title: 'Leadership', description: 'Led a team of 10 developers at TechCorp' },
-    { icon: CodeBracketIcon, title: 'Certifications', description: 'AWS Certified Solutions Architect' },
+    { icon: FaGraduationCap, title: 'Education', description: 'B.Tech in Computer Science' },
+    { icon: FaLaptopCode, title: 'Experience', description: 'Full Stack Developer with hands-on project experience' },
+    { icon: FaCode, title: 'Skills', description: 'Proficient in modern web technologies and frameworks' },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-28 pb-20">
+      <section className="pt-20 pb-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-12 md:mb-0">
@@ -45,22 +47,24 @@ const About = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <SectionTitle title="About Me" subtitle="Introduction" />
+                <div className="text-center">
+                  <SectionTitle title="About Me" subtitle="Introduction" />
+                </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                   Crafting Digital Experiences with Passion and Precision
                 </h2>
                 
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  Hello! I'm Alex Johnson, a passionate Full Stack Developer with over 5 years of experience creating 
+                  Hello! I'm Samad Khan, a passionate Full Stack Developer with 1+ years of experience creating 
                   beautiful, functional, and user-centered digital experiences. I'm driven by the challenge of solving 
                   complex problems with elegant solutions.
                 </p>
                 
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                   My journey in web development began during my computer science studies, where I discovered my love for 
-                  turning ideas into reality. Since then, I've worked with startups and established companies to bring 
-                  their visions to life through code and thoughtful design.
+                  turning ideas into reality. I specialize in building modern web applications using cutting-edge 
+                  technologies and creating intuitive user experiences.
                 </p>
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -101,7 +105,9 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-xl w-56 h-56 md:w-72 md:h-72 rounded-full" />
+                  <div className="bg-gray-200 border-2 border-dashed rounded-full w-56 h-56 md:w-72 md:h-72 flex items-center justify-center">
+                    <span className="text-6xl font-bold text-gray-400">SK</span>
+                  </div>
                 </div>
                 
                 {/* Decorative elements */}
@@ -141,8 +147,13 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-900 dark:text-white">{skill.name}</span>
+                <div className="flex justify-between mb-2 items-center">
+                  <div className="flex items-center space-x-2">
+                    {skill.icon && (
+                      <skill.icon className={`w-5 h-5 ${skill.color.replace('bg-', 'text-')}`} />
+                    )}
+                    <span className="font-medium text-gray-900 dark:text-white">{skill.name}</span>
+                  </div>
                   <span className="text-gray-600 dark:text-gray-400">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
@@ -166,11 +177,11 @@ const About = () => {
           <SectionTitle title="Technologies I Use" subtitle="Tools & Technologies" center={true} />
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              { name: 'Frontend', icon: DevicePhoneMobileIcon, items: ['React', 'Vue', 'Angular', 'HTML/CSS'] },
-              { name: 'Backend', icon: ServerStackIcon, items: ['Node.js', 'Python', 'Java', 'PHP'] },
-              { name: 'Database', icon: ServerStackIcon, items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis'] },
-              { name: 'Tools', icon: CodeBracketIcon, items: ['Git', 'Docker', 'AWS', 'Jest'] },
+            {[ 
+              { name: 'Frontend', icon: SiReact, color: 'text-cyan-500', items: ['React', 'Next.js', 'three.js', 'Tailwind CSS'] },
+              { name: 'Backend', icon: FaNodeJs, color: 'text-green-600', items: ['Node.js', 'Express', 'Python', 'REST APIs'] },
+              { name: 'Database', icon: SiMongodb, color: 'text-green-500', items: ['MongoDB', 'Firebase', 'SQL', 'Redis'] },
+              { name: 'Tools', icon: FaGithub, color: 'text-gray-800 dark:text-white', items: ['Git', 'GitHub', 'Vercel', 'Figma'] },
             ].map((category, index) => (
               <motion.div
                 key={index}
@@ -182,7 +193,7 @@ const About = () => {
                 whileHover={{ y: -5 }}
               >
                 <div className="w-16 h-16 mx-auto mb-4 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center">
-                  <category.icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                  <category.icon className={`w-8 h-8 ${category.color || "text-indigo-600 dark:text-indigo-400"}`} />
                 </div>
                 <h3 className="font-semibold text-lg text-gray-900 dark:text-white mb-4">{category.name}</h3>
                 <ul className="space-y-2">
@@ -230,10 +241,10 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { fact: "I speak 4 languages fluently", icon: "🌐" },
-              { fact: "I have traveled to 25+ countries", icon: "✈️" },
-              { fact: "I play 3 musical instruments", icon: "🎵" },
-              { fact: "I've completed 2 marathons", icon: "🏃" },
+              { fact: "I code in 5+ programming languages", icon: "💻" },
+              { fact: "Built 15+ successful projects", icon: "🚀" },
+              { fact: "Love solving complex algorithms", icon: "🧩" },
+              { fact: "Continuous learner & tech enthusiast", icon: "📚" },
             ].map((item, index) => (
               <motion.div
                 key={index}

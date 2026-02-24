@@ -6,10 +6,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { name: 'GitHub', url: '#' },
-    { name: 'LinkedIn', url: '#' },
-    { name: 'Twitter', url: '#' },
-    { name: 'Instagram', url: '#' },
+    { name: 'GitHub', url: 'https://github.com/SamadKhan4' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/samad-khan-a910b614a' },
+    { name: 'Twitter', url: 'https://twitter.com/samadkhan4' },
+    { name: 'Instagram', url: 'https://instagram.com/khansamad.in' },
   ];
 
   const quickLinks = [
@@ -32,7 +32,7 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              DevPortfolio
+              SAMAD KHAN
             </motion.div>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
               Crafting exceptional digital experiences with clean, efficient code.
@@ -83,9 +83,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contact Info</h3>
             <ul className="space-y-2">
-              <li className="text-gray-600 dark:text-gray-400">Email: hello@example.com</li>
-              <li className="text-gray-600 dark:text-gray-400">Location: San Francisco, CA</li>
-              <li className="text-gray-600 dark:text-gray-400">Phone: +1 (555) 123-4567</li>
+              <li className="text-gray-600 dark:text-gray-400">Email: samad04.in@gmail.com</li>
+              <li className="text-gray-600 dark:text-gray-400">Location: Nagpur , Maharashtra , IND</li>
+              <li className="text-gray-600 dark:text-gray-400">Phone: +91 9096345086</li>
             </ul>
           </div>
 
@@ -121,7 +121,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            &copy; {currentYear} DevPortfolio. All rights reserved.
+            &copy; {currentYear} SAMAD KHAN. All rights reserved.
           </motion.p>
           <motion.div
             className="mt-4 md:mt-0"

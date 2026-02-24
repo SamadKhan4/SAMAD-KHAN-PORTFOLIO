@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowDownTrayIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { FaReact, FaNodeJs, FaPython, FaJava, FaFigma } from 'react-icons/fa';
+import { SiCss3, SiMongodb } from 'react-icons/si';
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import { skills } from '../data/homeData';
@@ -31,7 +33,7 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900/20"></div>
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-blob"></div>
@@ -39,14 +41,14 @@ const Home = () => {
           <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-indigo-500/10 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
         
-        <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-12 md:mb-0">
+        <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+            <div className="lg:w-1/2 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center md:text-left"
+                className=""
               >
                 <motion.h1 
                   className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4"
@@ -67,12 +69,12 @@ const Home = () => {
                 </motion.h2>
                 
                 <motion.p 
-                  className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto md:mx-0"
+                  className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
                 >
-                  I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Even if you don't hire me, these are some cool tricks you can use.
+                  I build exceptional digital experiences that are fast, accessible, visually appealing, and responsive. Creating modern web applications with cutting-edge technologies.
                 </motion.p>
                 
                 <motion.div
@@ -105,14 +107,14 @@ const Home = () => {
               </motion.div>
             </div>
             
-            <div className="md:w-1/2 flex justify-center">
+            <div className="lg:w-1/2 flex justify-center lg:justify-end">
               <motion.div
                 className="relative"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
-                <div className="w-100 h-100 md:w-80 md:h-80 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl p-4">
+                <div className="w-[250px] h-[250px] md:w-[350px] md:h-[350px] lg:w-[450px] lg:h-[450px] bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl p-4 relative">
                   <img 
                     src={profileImage} 
                     alt="Samad Khan" 
@@ -120,21 +122,39 @@ const Home = () => {
                   />
                 </div>
                 
-                {/* Floating elements */}
-                <motion.div 
-                  className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg"
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 3, repeat: Infinity }}
+                {/* Tech Icons Around Circle */}
+                <motion.div
+                  className="absolute inset-0"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
-                  <div className="text-indigo-600 dark:text-indigo-400 font-bold">React</div>
-                </motion.div>
-                
-                <motion.div 
-                  className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg"
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                >
-                  <div className="text-cyan-600 dark:text-cyan-400 font-bold">Node.js</div>
+                  {/* React - Top */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center border-2 border-cyan-500 hover:scale-110 transition">
+                      <FaReact className="text-2xl md:text-3xl text-cyan-500" />
+                    </div>
+                  </div>
+
+                  {/* Node - Right */}
+                  <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                    <div className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center border-2 border-green-600 hover:scale-110 transition">
+                      <FaNodeJs className="text-2xl md:text-3xl text-green-600" />
+                    </div>
+                  </div>
+
+                  {/* Python - Bottom */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                    <div className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center border-2 border-yellow-500 hover:scale-110 transition">
+                      <FaPython className="text-2xl md:text-3xl text-yellow-500" />
+                    </div>
+                  </div>
+
+                  {/* Figma - Left */}
+                  <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                    <div className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center border-2 border-purple-500 hover:scale-110 transition">
+                      <FaFigma className="text-2xl md:text-3xl text-purple-500" />
+                    </div>
+                  </div>
                 </motion.div>
               </motion.div>
             </div>
@@ -176,7 +196,7 @@ const Home = () => {
                 whileHover={{ y: -5 }}
               >
                 <div className="w-16 h-16 mx-auto mb-4 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center">
-                  <skill.icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                  <skill.icon className={`w-8 h-8 ${skill.color || "text-indigo-600 dark:text-indigo-400"}`} />
                 </div>
                 <h3 className="font-semibold text-lg text-gray-900 dark:text-white">{skill.name}</h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">{skill.level}</p>
@@ -242,21 +262,21 @@ const Home = () => {
               <div className="space-y-12 md:space-y-0">
                 {[
                   {
-                    year: "2022 - Present",
-                    title: "Senior Full Stack Developer",
-                    company: "Tech Innovations Inc.",
+                    year: "2026 - Present",
+                    title: "Full Stack Developer",
+                    company: "Elite Associate",
                     description: "Led development of multiple web applications using React, Node.js, and cloud technologies."
                   },
                   {
-                    year: "2020 - 2022",
-                    title: "Frontend Developer",
-                    company: "Digital Solutions Co.",
+                    year: "2025 - February",
+                    title: "Full Stack Developer",
+                    company: "Agarkar Media Pvt.Ltd",
                     description: "Developed responsive web applications and collaborated with UX designers to implement pixel-perfect designs."
                   },
                   {
-                    year: "2018 - 2020",
-                    title: "Junior Developer",
-                    company: "StartUp Ventures",
+                    year: "2024 - May",
+                    title: "Cloud Intern",
+                    company: "Kasnet Pvt.Ltd",
                     description: "Built and maintained various client websites and learned modern development practices."
                   }
                 ].map((item, index) => (
