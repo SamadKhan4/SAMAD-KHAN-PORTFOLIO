@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an axios instance with base configuration
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://api.samad-portfolio.in/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://portfoliobackend-production-4d3b.up.railway.app/api',
   timeout: 10000, // 10 seconds timeout
   headers: {
     'Content-Type': 'application/json',
