@@ -9,25 +9,25 @@ const Contact = () => {
     {
       icon: EnvelopeIcon,
       title: 'Email',
-      value: 'hello@example.com',
+      value: 'samad04.in@gmail.com',
       description: 'Send me an email anytime'
     },
     {
       icon: PhoneIcon,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 9am to 5pm'
+      value: '+91 9096345086',
+      description: 'Mon-Sat from 9am to 5pm'
     },
     {
       icon: MapPinIcon,
       title: 'Location',
-      value: 'San Francisco, CA',
-      description: 'Available for remote work'
+      value: 'Nagpur, Maharashtra, IND',
+      description: 'Available for  ork'
     },
     {
       icon: AcademicCapIcon,
       title: 'Office Hours',
-      value: '9AM - 5PM PST',
+      value: '9AM - 6PM PST',
       description: 'Response within 24 hours'
     }
   ];
@@ -76,19 +76,26 @@ const Contact = () => {
             <div className="mt-12">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Connect with me</h4>
               <div className="flex space-x-4">
-                {['GitHub', 'LinkedIn', 'Twitter', 'Instagram'].map((social, index) => (
-                  <motion.a
-                    key={social}
-                    href="#"
-                    className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors duration-300"
-                    whileHover={{ y: -3, scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span className="sr-only">{social}</span>
-                    <span className="font-medium text-sm">{social.charAt(0)}</span>
-                  </motion.a>
-                ))}
-              </div>
+              {[ 
+                { name: 'GitHub', url: 'https://github.com/SamadKhan4', icon: 'GH' },
+                { name: 'LinkedIn', url: 'https://www.linkedin.com/in/samad-khan-a910b614a', icon: 'IN' },
+                { name: 'Twitter', url: 'https://twitter.com/samadkhan4', icon: 'TW' },
+                { name: 'Instagram', url: 'https://instagram.com/khansamad.in', icon: 'IG' }
+              ].map((social, index) => (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center hover:bg-indigo-600 hover:text-white transition-colors duration-300"
+                  whileHover={{ y: -3, scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="sr-only">{social.name}</span>
+                  <span className="font-medium text-sm">{social.icon}</span>
+                </motion.a>
+              ))}
+            </div>
             </div>
           </motion.div>
 
