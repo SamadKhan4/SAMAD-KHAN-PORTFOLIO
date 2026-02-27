@@ -22,7 +22,7 @@ const Contact = () => {
       icon: MapPinIcon,
       title: 'Location',
       value: 'Nagpur, Maharashtra, IND',
-      description: 'Available for  ork'
+      description: 'Available for Work'
     },
     {
       icon: AcademicCapIcon,
