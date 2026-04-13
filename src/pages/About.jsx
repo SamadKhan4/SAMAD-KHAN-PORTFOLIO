@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { FaReact, FaNodeJs, FaPython, FaJava, FaFigma, FaAws, FaGithub, FaGraduationCap, FaLaptopCode, FaCode, FaNode } from 'react-icons/fa';
 import { SiJavascript, SiMongodb, SiFirebase, SiTailwindcss, SiVuedotjs, SiNextdotjs, SiGithub, SiReact  } from 'react-icons/si';
+import profileImage from '../images/me.png';
 
 const About = () => {
   const aboutStats = [
@@ -106,10 +107,12 @@ const About = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
-                  <div className="bg-gray-200 border-2 border-dashed rounded-full w-56 h-56 md:w-72 md:h-72 flex items-center justify-center">
-                    <span className="text-6xl font-bold text-gray-400">SK</span>
-                  </div>
+                <div className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl p-4">
+                  <img 
+                    src={profileImage} 
+                    alt="Samad Khan" 
+                    className="w-full h-full object-cover rounded-full border-4 border-white/20"
+                  />
                 </div>
                 
                 {/* Decorative elements */}

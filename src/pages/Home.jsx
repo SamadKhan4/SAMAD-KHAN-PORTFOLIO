@@ -7,7 +7,7 @@ import { SiCss3, SiMongodb } from 'react-icons/si';
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import { skills, featuredProjects } from '../data/homeData';
-
+import profileImage from '../images/me.png';
 const Home = () => {
   // Animation variants
   const fadeInUp = {
@@ -118,7 +118,7 @@ const Home = () => {
               >
                 <div className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl p-4 relative">
                   <img 
-                    src="https://res.cloudinary.com/dxjwrock6/image/upload/v1776082149/WhatsApp_Image_2026-04-13_at_5.38.33_PM_hga89g.jpg" 
+                    src={profileImage} 
                     alt="Samad Khan" 
                     className="w-full h-full object-cover rounded-full border-4 border-white/20"
                   />
