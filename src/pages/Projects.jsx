@@ -1,44 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import SectionTitle from '../components/SectionTitle';
-import { getAllProjects, getFeaturedProjects } from '../services/api';
+import { allProjects } from '../data/homeData';
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
-  const [filteredProjects, setFilteredProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
+  // Static projects data
+  const projects = allProjects;
+
   // Get unique categories from projects
-  const categories = projects.length > 0 
-    ? ['All', ...new Set(projects.map(project => project.category || 'Other'))] 
-    : ['All'];
-
-  // Fetch projects from API
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await getAllProjects();
-        // Handle API response format { success: boolean, data: array, count: number }
-        const projectsData = response.success ? response.data : response;
-        setProjects(projectsData);
-        setFilteredProjects(projectsData);
-        setLoading(false);
-      } catch (err) {
-        console.error('Error fetching projects:', err);
-        setError('Failed to fetch projects');
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
+  const categories = ['All', ...new Set(projects.map(project => project.category || 'Other'))];
 
   // Filter projects based on search term and category
-  useEffect(() => {
+  const filteredProjects = useMemo(() => {
     let filtered = projects;
 
     // Filter by category
@@ -55,19 +32,8 @@ const Projects = () => {
       );
     }
 
-    setFilteredProjects(filtered);
+    return filtered;
   }, [searchTerm, selectedCategory, projects]);
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-red-600">Error</h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-2">{error}</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen py-20">
@@ -119,16 +85,8 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Loading State */}
-        {loading && (
-          <div className="flex justify-center items-center min-h-96">
-            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-indigo-600"></div>
-          </div>
-        )}
-
         {/* Projects Grid */}
-        {!loading && (
-          <motion.div
+        <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             layout
           >
@@ -159,7 +117,6 @@ const Projects = () => {
               </motion.div>
             )}
           </motion.div>
-        )}
 
         {/* Stats Section */}
         <div className="mt-20">
@@ -169,8 +126,8 @@ const Projects = () => {
             {[
               { value: projects.length, label: 'Total Projects' },
               { value: categories.length - 1, label: 'Categories' },
-              { value: [...new Set(projects.flatMap(p => p.technologies || []))].length, label: 'Technologies Used' },
-              { value: projects.length > 0 ? Math.max(...projects.map(p => new Date(p.createdAt).getFullYear())) : new Date().getFullYear(), label: 'Latest Year' },
+              { value: [...new Set(projects.flatMap(p => p.techStack || []))].length, label: 'Technologies Used' },
+              { value: projects.length > 0 ? Math.max(...projects.map(p => parseInt(p.year))) : new Date().getFullYear(), label: 'Latest Year' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
