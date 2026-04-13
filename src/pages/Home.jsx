@@ -96,7 +96,7 @@ const Home = () => {
                   </Link>
                   
                   <motion.a
-                    href="/Resume.pdf"
+                    href="/Samad_khan_9096345086.pdf"
                     download="Samad_Khan_Resume.pdf"
                     className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-300 font-medium flex items-center justify-center"
                     whileHover={{ scale: 1.05 }}
