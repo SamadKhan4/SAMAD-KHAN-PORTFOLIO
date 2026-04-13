@@ -8,6 +8,7 @@ import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import { skills, featuredProjects } from '../data/homeData';
 import profileImage from '../images/me.png';
+import resumePDF from '../data/Samad_khan_9096345086.pdf';
 const Home = () => {
   // Animation variants
   const fadeInUp = {
@@ -96,7 +97,7 @@ const Home = () => {
                   </Link>
                   
                   <motion.a
-                    href="/Samad_khan_9096345086.pdf"
+                    href={resumePDF}
                     download="Samad_Khan_Resume.pdf"
                     className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-300 font-medium flex items-center justify-center"
                     whileHover={{ scale: 1.05 }}

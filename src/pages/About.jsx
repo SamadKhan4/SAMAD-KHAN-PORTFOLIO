@@ -12,6 +12,7 @@ import {
 import { FaReact, FaNodeJs, FaPython, FaJava, FaFigma, FaAws, FaGithub, FaGraduationCap, FaLaptopCode, FaCode, FaNode } from 'react-icons/fa';
 import { SiJavascript, SiMongodb, SiFirebase, SiTailwindcss, SiVuedotjs, SiNextdotjs, SiGithub, SiReact  } from 'react-icons/si';
 import profileImage from '../images/me.png';
+import resumePDF from '../data/Samad_khan_9096345086.pdf';
 
 const About = () => {
   const aboutStats = [
@@ -89,7 +90,7 @@ const About = () => {
                 </div>
                 
                 <motion.a
-                  href="/Resume.pdf"
+                  href={resumePDF}
                   download="Samad_Khan_Resume.pdf"
                   className="px-8 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-300 font-medium inline-block"
                   whileHover={{ scale: 1.05 }}
